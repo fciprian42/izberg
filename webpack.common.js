@@ -26,7 +26,16 @@ module.exports = {
             {loader: 'css-loader'},
             {loader: 'sass-loader'}
           ]
-      }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
     ]
   },
   plugins: [
