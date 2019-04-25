@@ -2,5 +2,10 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
-  mode: 'production'
+  mode: 'production',
+  devServer: {
+    host: '',
+    port: 3000,
+    open: true
+  }
 })
