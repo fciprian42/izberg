@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import { Paper, Typography, Divider, TextField, Button } from '@material-ui/core'
+import { TextField, Button } from '@material-ui/core'
 
-import styles from './SignUp.scss'
+import styles from './Signup.scss'
 
-class SignUp extends PureComponent {
+class Signup extends PureComponent {
     constructor(props) {
         super(props)
 
@@ -19,9 +19,9 @@ class SignUp extends PureComponent {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    
     handleChange(event) {
         if (event && event.target) {
             this.setState({
@@ -30,27 +30,17 @@ class SignUp extends PureComponent {
         }
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
-    }
-
     render() {
         return (
-            <>
-                <Paper className={styles.boxForm}>
-                    <Typography variant='h4' color='inherit' style={{paddingBottom: 10}}>
-                        Join us at Izberg !
-                    </Typography>
-                    <Divider />
-                    <form onSubmit={this.handleSubmit} className={styles.form} autoComplete='off'>
-                        <TextField
-                            id='username'
-                            label='Username'
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                            margin='normal'
-                            required
-                        />
+            <form onSubmit={(e) => {this.props.onSubmit(e, this.state.username)}} className={styles.form} autoComplete='off'>
+                <TextField
+                    id='username'
+                    label='Username'
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                    margin='normal'
+                    required
+                />
 
                         <TextField
                             id='password'
@@ -72,14 +62,12 @@ class SignUp extends PureComponent {
                             required
                         />
 
-                        <Button variant="contained" color="primary" style={{marginTop: 20}}>
+                        <Button type='submit' variant="contained" color="primary" style={{marginTop: 20}}>
                             Let's go
                         </Button>
-                    </form>
-                </Paper>
-            </>
+            </form>
         )
     }
 }
 
-export default SignUp
+export default Signup
