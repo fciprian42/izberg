@@ -1,22 +1,17 @@
 {
-  "name": "rbs",
+  "name": "izberg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest ./tests"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./tests/enzyme.setup.js"
-    ]
+    "start": "webpack-dev-server --config webpack.dev.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "fciprian",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^9.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-animated-css": "^1.0.5",
@@ -30,10 +25,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "babel-loader": "^8.0.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/pro-light-svg-icons": "^5.8.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@fortawesome/fontawesome-pro": "^5.8.1",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
