@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { TextField, Button, Divider, Paper, Typography } from '@material-ui/core'
-import {Animated} from "react-animated-css";
+import { Animated } from 'react-animated-css'
 import { userConstants } from '../../constants/userConstants'
 import { connect } from 'react-redux'
 
@@ -93,6 +93,7 @@ class Signup extends PureComponent {
                 <form onSubmit={this.handleSubmit} className={styles.form} autoComplete='off'>
                     <TextField
                         id='username'
+                        tyoe='text'
                         label='Username'
                         value={this.state.username}
                         onChange={this.handleChange}
@@ -100,29 +101,29 @@ class Signup extends PureComponent {
                         required
                     />
 
-                        <TextField
-                            id='password'
-                            label='Password'
-                            type='password'
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            margin='normal'
-                            required
-                        />
+                    <TextField
+                        id='password'
+                        label='Password'
+                        type='password'
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                        margin='normal'
+                        required
+                    />
 
-                        <TextField
-                            id='passwordConfirm'
-                            label='Re-type Password'
-                            type='password'
-                            value={this.state.passwordConfirm}
-                            onChange={this.handleChange}
-                            margin='normal'
-                            required
-                        />
+                    <TextField
+                        id='passwordConfirm'
+                        label='Re-type Password'
+                        type='password'
+                        value={this.state.passwordConfirm}
+                        onChange={this.handleChange}
+                        margin='normal'
+                        required
+                    />
 
-                        <Button type='submit' variant="contained" color="primary" style={{marginTop: 20}}>
-                            Let's go
-                        </Button>
+                    <Button type='submit' variant="contained" color="primary" style={{marginTop: 20}}>
+                        Let's go
+                    </Button>
                 </form>
             </Paper>
         </>)

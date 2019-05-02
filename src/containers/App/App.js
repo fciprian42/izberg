@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { Typography } from '@material-ui/core'
+import { Animated } from 'react-animated-css'
+import { Typography, Avatar } from '@material-ui/core'
 
 import styles from './App.scss'
 
@@ -11,12 +12,15 @@ class App extends PureComponent {
         const { username, isRegistred } = this.props.store
         return (
             <div className={styles.app}>
-                {!isRegistred && <Signup />}
-                {isRegistred && <div>
+                {!isRegistred && <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={!isRegistred}>
+                    <Signup />
+                </Animated>}
+                {username && isRegistred && <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={isRegistred} className={styles.flex}>
+                    <Avatar className={styles.avatar}>{username && username.charAt(0).toUpperCase()}</Avatar>
                     <Typography variant='h4' color='inherit'>
                         Welcome, {username && username}
                     </Typography>
-                </div>}
+                </Animated>}
             </div>
         )
     }
